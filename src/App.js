@@ -1,17 +1,11 @@
-import React, { useState, useCallback } from 'react';
-import NewsList from './components/NewsList';
-import Categories from './components/Categories';
+import React from 'react';
+import { Route } from 'react-router-dom';
+import NewsPage from './components/NewsPage';
 
 const App = () => {
-  const [category, setCategory] = useState();
-  const onSelect = useCallback((category) => setCategory(category), []);
-
-  return (
-    <>
-      <Categories category={category} onSelect={onSelect} />
-      <NewsList category={category} />
-    </>
-  );
+  // category 뒤에 ? 는 선택적이라는 의미이다.
+  // category URL 파라미터가 없다면 전체 카테고리를 선택한 것이다
+  return <Route path="/:category?" component={NewsPage} />;
 };
 
 export default App;
