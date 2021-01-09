@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import NewsPage from './components/NewsPage';
+import NewsPage from './pages/NewsPage';
 
 const App = () => {
   // category 뒤에 ? 는 선택적이라는 의미이다.
